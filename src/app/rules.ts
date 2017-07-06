@@ -5,7 +5,6 @@ import {
     EntityDetailsComponent, ShowLineComponent,
     ListingTableComponent
 } from 'angularm';
-import { StyledListingTableComponent } from "./widgets/styled.listing.table.component";
 
 export let defineRules = (angularm: AngularmService) => {
     angularm
