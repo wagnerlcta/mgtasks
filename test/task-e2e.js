@@ -99,13 +99,13 @@ listingPage(ROOT_URL + 'campaigns', "Campaigns");
 checkTitleBar();
 
 clickLink('New Campaign', 'New Campaign');
-fillForm("campaign_code", "510", "campaign_name", "Campaign 1", "campaign_active", "true");
+fillForm("campaign_code", "510", "campaign_name", "Campaign 1", "campaign_status", "New");
 clickButton('Create Campaign');
 back();
 
 checkCard();
 findElementText('p', '510');
 findElementText('p', 'Campaign 1');
-findElementText('p', 'true');
+findElementText('p', 'New');
 
 driver.quit();
