@@ -19,6 +19,9 @@ import { AppComponent } from './app.component';
 import { StyledListingTableComponent } from "./widgets/styled.listing.table.component";
 import { CssCreateFormComponent } from './widgets/css.create.form.component';
 import { CssEditFormComponent } from './widgets/css.edit.form.component';
+import { ListCardsComponent } from "./widgets/css.list.cards.component";
+import { CardComponent } from "./widgets/css.card.component";
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     AppComponent,
     StyledListingTableComponent,
     CssCreateFormComponent,
-    CssEditFormComponent
+    CssEditFormComponent,
+    ListCardsComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +68,9 @@ const appRoutes: Routes = [
     ListingTableComponent,
     StyledListingTableComponent,
     CssCreateFormComponent,
-    CssEditFormComponent
+    CssEditFormComponent,
+    ListCardsComponent,
+    CardComponent
   ],
   bootstrap: [AppComponent]
 })

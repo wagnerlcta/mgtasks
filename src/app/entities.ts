@@ -76,7 +76,7 @@ export let describeDomain = (angularm: AngularmService) => {
       entityType('testcase', 'testcases', {id: 'code'})
         .propertyType('code', 'string').propertyType('title', 'string').propertyType('summary', 'string')
         .propertyType('preconditions', 'string').propertyType('status', 'string').propertyType('importance', 'string')
-        .propertyType('minutes', 'string')
+        .propertyType('minutes', 'integer')
     ),
     memoryDAO(
       entityType('salesforceuser', 'salesforceusers', {id: 'username'})
