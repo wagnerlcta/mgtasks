@@ -29,16 +29,55 @@ var findElementClass = function (element, clazz) {
     3000, element + " element with " + clazz + " class not found");
 }
 
+var clickLink = function (link, title) {
+  driver.sleep(CLICK_DELAY);
+  waitFor(By.xpath('(//a[text()="' + link + '"])[last()]'), 3000, link + ' Link not found').click();
+  if (title) {
+    waitFor(By.xpath('//h1[text()="' + title + '"]'), 3000, title + ' Title not found');
+  }
+}
+
+var fillForm = function () {
+  for(var i = 0; i < arguments.length; i++) { 
+    var input = find(By.id(arguments[i++]));
+    input.clear();
+    input.sendKeys(arguments[i]);
+  }
+}
+
+var clickButton = function(label) {
+  find(By.xpath('//input[@value="' + label + '"]')).click();
+  driver.sleep(CLICK_DELAY);
+}
+
+var back = function () {
+  driver.sleep(CLICK_DELAY);
+  find(By.xpath('//a[text()="Back"]')).click();
+  driver.sleep(CLICK_DELAY);
+}
+
 listingPage(ROOT_URL + 'bugs', "Bugs", "Code", "Product", "Component", "Version", "Summary", 
   "Description", "Importance", "Targetmilestone", "Assignedto", "Qacontact", "Url", 
   "Whiteboard", "Keywords", "Tags", "Dependson", "Blocks", "Origestimated", "Hoursworked", 
   "Hoursleft", "Deadline", "Additionalcomments", "Status");
 
-findElementClass("table", "w3-table-all");
+clickLink('New Bug', 'New Bug');
+findElementClass("form", "w3-card-4");
 
-listingPage(ROOT_URL + 'bugzillaUsers', "Bugzillausers", "Loginname", "Realname", "Password",
+fillForm("bug_code", "1", "bug_product", "Product 1");
+clickButton('Create Bug');
+clickLink('Edit', 'Editing Bug');
+findElementClass("form", "w3-card-4");
+
+listingPage(ROOT_URL + 'bugzillausers', "Bugzillausers", "Loginname", "Realname", "Password",
   "Bugmaildisabled", "Disabletext", "Adminpermission", "Creategroupspermission", "Edituserspermission");
 
-findElementClass("table", "w3-table-all");
+clickLink('New Bugzillauser', 'New Bugzillauser');
+findElementClass("form", "w3-card-4");
+
+fillForm("bugzillauser_loginname", "login1", "bugzillauser_realname", "Name 1");
+clickButton('Create Bugzillauser');
+clickLink('Edit', 'Editing Bugzillauser');
+findElementClass("form", "w3-card-4");
 
 driver.quit();

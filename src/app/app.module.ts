@@ -17,6 +17,8 @@ import { EntityLineComponent, CreateEntityComponent, FormLineComponent,
 
 import { AppComponent } from './app.component';
 import { StyledListingTableComponent } from "./widgets/styled.listing.table.component";
+import { CssCreateFormComponent } from './widgets/css.create.form.component';
+import { CssEditFormComponent } from './widgets/css.edit.form.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +33,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    StyledListingTableComponent
+    StyledListingTableComponent,
+    CssCreateFormComponent,
+    CssEditFormComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +61,9 @@ const appRoutes: Routes = [
     EntityDetailsComponent, 
     ShowLineComponent,
     ListingTableComponent,
-    StyledListingTableComponent
+    StyledListingTableComponent,
+    CssCreateFormComponent,
+    CssEditFormComponent
   ],
   bootstrap: [AppComponent]
 })
