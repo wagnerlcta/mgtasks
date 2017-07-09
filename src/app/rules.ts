@@ -6,9 +6,6 @@ import {
     ListingTableComponent
 } from 'angularm';
 
-import { CssCreateFormComponent } from './widgets/css.create.form.component';
-import { CssEditFormComponent } from './widgets/css.edit.form.component';
-
 export let defineRules = (angularm: AngularmService) => {
     angularm
         .ptr('form_line', '*', 'code', null, FormLineComponent, { inputType: 'number' })
