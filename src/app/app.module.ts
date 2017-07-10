@@ -16,6 +16,10 @@ import { EntityLineComponent, CreateEntityComponent, FormLineComponent,
   ShowLineComponent, ListingTableComponent } from 'angularm';
 
 import { AppComponent } from './app.component';
+import { TableHeaderComponent } from "./widgets/table.header";
+import { TableCellComponent } from "./widgets/table.cell";
+import { CellEntityLineComponent } from "./widgets/cell.entity.line";
+import { CssListTableComponent } from "./widgets/css.list.table";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,7 +33,11 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CssListTableComponent,
+    TableHeaderComponent,
+    CellEntityLineComponent,
+    TableCellComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +62,11 @@ const appRoutes: Routes = [
     EditFormLineComponent,
     EntityDetailsComponent, 
     ShowLineComponent,
-    ListingTableComponent
+    ListingTableComponent,
+    CssListTableComponent,
+    TableHeaderComponent,
+    CellEntityLineComponent,
+    TableCellComponent
   ],
   bootstrap: [AppComponent]
 })
