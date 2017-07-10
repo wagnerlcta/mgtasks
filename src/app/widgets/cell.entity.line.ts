@@ -7,7 +7,7 @@ import { AngularmService, EntityComponent, FlashMessageService, TitleCase } from
 @Component({
     selector: 'tr [mgEntityLine]',
     template:
-        `<div [mgForeachProperty]="'table_line'" [entity]="entity"></div>
+        `<div [mgForeachProperty]="'table_cell'" [entity]="entity"></div>
          <td> <a href="#" (click)="show()">Show</a></td>
          <td> <a href="#" (click)="edit()">Edit</a></td>
          <td> <a href="#" (click)="destroy()">Destroy</a></td>`,
